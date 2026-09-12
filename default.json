@@ -15,9 +15,8 @@
 			"groupName": "minor + patch updates"
 		},
 		{
-			"description": "Keep major/breaking updates separate for manual review — never auto-merged",
+			"description": "Keep major/breaking updates separate for manual review",
 			"matchUpdateTypes": ["major"],
-			"groupName": null,
 			"automerge": false
 		}
 	]
