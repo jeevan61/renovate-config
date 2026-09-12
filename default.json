@@ -1,0 +1,24 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended"],
+	"timezone": "Asia/Kolkata",
+	"schedule": ["* * 1-7 1,4,7,10 *"],
+	"prConcurrentLimit": 10,
+	"prHourlyLimit": 3,
+	"vulnerabilityAlerts": {
+		"schedule": ["at any time"]
+	},
+	"packageRules": [
+		{
+			"description": "Group safe patch/minor updates into one PR",
+			"matchUpdateTypes": ["minor", "patch"],
+			"groupName": "minor + patch updates"
+		},
+		{
+			"description": "Keep major/breaking updates separate for manual review — never auto-merged",
+			"matchUpdateTypes": ["major"],
+			"groupName": null,
+			"automerge": false
+		}
+	]
+}
