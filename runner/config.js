@@ -5,6 +5,7 @@ module.exports = {
 	token: process.env.RENOVATE_TOKEN,
 	gitAuthor: "Renovate Bot <renovate-bot@viewzenlabs.com>",
 	repositories: require("./repositories.json"),
+	baseBranches: ["feat/renovate-onboarding"],	// temporary 
 	hostRules: [
 		{
 			matchHost: "npmregistry.viewzenlabs.in",
