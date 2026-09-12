@@ -29,17 +29,7 @@ Self-hosted Renovate setup — automates dependency update PRs across ViewzenLab
 
 ### Onboarding a repo
 
-- Add the repo name to `runner/repositories.json`
-- Add a `renovate.json` to that repo:
-
-    ```json
-    { "extends": ["local>jeevan61/renovate-config"] }
-    ```
-
-    (temporary — under the personal `jeevan61` account until this repo is
-    transferred to the ViewzenLabs org, at which point this path and every
-    onboarded repo's `renovate.json` need updating to match)
-
+- Add the repo name to `runner/repositories.json` 
 - Run a dry run first, then set `RENOVATE_DRY_RUN="false"` once confirmed
 
 #### Reference
