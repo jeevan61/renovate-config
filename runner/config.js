@@ -5,7 +5,8 @@ module.exports = {
 	token: process.env.RENOVATE_TOKEN,
 	gitAuthor: "Renovate Bot <renovate-bot@viewzenlabs.com>",
 	repositories: require("./repositories.json"),
-	baseBranches: ["feat/renovate-onboarding"],	// temporary 
+	baseBranches: ["feat/renovate-onboarding"],	// temporary
+	onboarding: false,	// temporary — skip the "add config" onboarding PR and apply our config directly
 	hostRules: [
 		{
 			matchHost: "npmregistry.viewzenlabs.in",
