@@ -8,17 +8,6 @@ module.exports = {
 	baseBranches: ["feat/renovate-onboarding"],	// temporary
 	onboarding: false,	// temporary — skip the "add config" onboarding PR and apply our config directly
 	requireConfig: "optional",	// temporary
-	packageRules: [
-		{
-			matchUpdateTypes: ["minor", "patch"],
-			groupName: "minor + patch updates",
-		},
-		{
-			matchUpdateTypes: ["major"],
-			groupName: null,
-			automerge: false,
-		},
-	],
 	hostRules: [
 		{
 			matchHost: "npmregistry.viewzenlabs.in",
