@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
-# Runs self-hosted Renovate against the repos listed in repositories.json,
-# using the official Renovate Docker image. Safe to run manually or from
-# Jenkins/cron.
-#
-# Copy .env.template to .env and fill in the values, or export the same
-# vars in your shell before running — either way works.
-#
-# Required env vars:
-#   RENOVATE_TOKEN     - GitHub token/bot account with repo read/write access
-# Optional env vars:
-#   VIEWZEN_NPM_TOKEN  - private npm registry token, for resolving @viewzen/* packages
-#   RENOVATE_DRY_RUN   - "true" to only log what would happen, no PRs opened (default: true)
+
 
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -18,7 +7,6 @@ cd "$(dirname "$0")"
 ENV_FILE_ARGS=()
 if [ -f .env ]; then
 	set -a
-	# shellcheck disable=SC1091
 	source .env
 	set +a
 	ENV_FILE_ARGS=(--env-file .env)

@@ -12,7 +12,10 @@ module.exports = {
 
 	extends: ["config:recommended"],
 	timezone: "Asia/Kolkata",
-	schedule: ["* * 1-7 1,4,7,10 *"],
+
+	baseBranchPatterns: ["develop"],
+
+	schedule: ["at any time"],
 	prConcurrentLimit: 10,
 	prHourlyLimit: 3,
 	vulnerabilityAlerts: {
@@ -26,7 +29,7 @@ module.exports = {
 		},
 		{
 			description:
-				"Major/breaking updates are never auto-merged. Unrelated majors stay as separate PRs by default; genuinely related packages (e.g. same monorepo) still group automatically via config:recommended.",
+				"Major updates always need a manual look, so never auto-merge them. Each one gets its own PR, unless it's part of a related group (e.g. same monorepo), which still gets bundled automatically.",
 			matchUpdateTypes: ["major"],
 			automerge: false,
 		},
