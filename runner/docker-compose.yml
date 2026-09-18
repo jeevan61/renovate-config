@@ -1,0 +1,13 @@
+services:
+  renovate:
+    image: renovate/renovate:latest
+    restart: "no"
+    environment:
+      RENOVATE_TOKEN: ${RENOVATE_TOKEN:?Set RENOVATE_TOKEN in .env before running}
+      VIEWZEN_NPM_TOKEN: ${VIEWZEN_NPM_TOKEN:-}
+      RENOVATE_DRY_RUN: ${RENOVATE_DRY_RUN:-true}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      RENOVATE_CONFIG_FILE: /usr/src/app/runner-config/config.js
+    volumes:
+      - ./config.js:/usr/src/app/runner-config/config.js:ro
+      - ./repositories.json:/usr/src/app/runner-config/repositories.json:ro

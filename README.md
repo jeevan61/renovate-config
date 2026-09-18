@@ -4,7 +4,7 @@ Self-hosted Renovate setup — automates dependency update PRs across ViewzenLab
 
 ## Prerequesite
 
--   Docker
+-   Docker, with the Compose plugin (`docker compose ...`)
 -   A GitHub token (repo read/write access)
 -   Private npm registry token, for repos using `@viewzen/*` packages
 
@@ -24,7 +24,14 @@ Self-hosted Renovate setup — automates dependency update PRs across ViewzenLab
 - Run it
 
     ```sh
-    ./run.sh
+    cd runner
+    docker compose up
+    ```
+
+- Once it finishes, tear the container down
+
+    ```sh
+    docker compose down
     ```
 
 ### Onboarding a repo
